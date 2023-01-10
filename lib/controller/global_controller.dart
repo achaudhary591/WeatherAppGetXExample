@@ -1,6 +1,4 @@
 import 'package:geolocator/geolocator.dart';
-import 'package:get/get_state_manager/src/simple/get_controllers.dart';
-
 import 'package:get/get.dart';
 
 class GlobalController extends GetxController {
@@ -52,6 +50,7 @@ class GlobalController extends GetxController {
         .then((value) {
       _latitude.value = value.latitude;
       _longitude.value = value.longitude;
+      _isLoading.value = false;
     });
   }
 }

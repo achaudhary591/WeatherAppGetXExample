@@ -48,6 +48,7 @@ class _HeaderWidgetState extends State<HeaderWidget> {
             style: const TextStyle(
               fontSize: 35,
               height: 2,
+              fontWeight: FontWeight.bold
             ),
           ),
         ),

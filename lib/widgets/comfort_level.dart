@@ -46,7 +46,7 @@ class ComfortLevel extends StatelessWidget {
                         height: 1.5
                       )
                     ),
-                    animDurationMultiplier: 2,
+                    animDurationMultiplier: 2.5,
                     animationEnabled: true,
                     size: 140,
                   ),

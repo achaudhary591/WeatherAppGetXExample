@@ -40,10 +40,9 @@ class ComfortLevel extends StatelessWidget {
                         bottomLabelText: "Humidity",
                         bottomLabelStyle: const TextStyle(
                             letterSpacing: 0.1, fontSize: 14, height: 1.5)),
-                    animDurationMultiplier: 4,
-                    startAngle: 150,
-                    angleRange: 240,
-                    //animationEnabled: true,
+                    animDurationMultiplier: 4.0,
+                    startAngle: 140,
+                    angleRange: 260,
                     size: 140,
                   ),
                 ),

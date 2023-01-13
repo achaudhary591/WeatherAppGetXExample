@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:intl/intl.dart';
 import '../controller/global_controller.dart';
 
@@ -48,7 +47,6 @@ class _HeaderWidgetState extends State<HeaderWidget> {
             style: const TextStyle(
               fontSize: 35,
               height: 2,
-              fontWeight: FontWeight.bold
             ),
           ),
         ),

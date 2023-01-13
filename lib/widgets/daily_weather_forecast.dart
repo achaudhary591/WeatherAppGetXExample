@@ -5,13 +5,13 @@ import 'package:weather_app_getx_example/model/weather_data_daily.dart';
 import '../utils/custom_colors.dart';
 
 class DailyWeatherForecast extends StatelessWidget {
-
   final WeatherDataDaily weatherDataDaily;
 
-  const DailyWeatherForecast({Key? key, required this.weatherDataDaily}) : super(key: key);
+  const DailyWeatherForecast({Key? key, required this.weatherDataDaily})
+      : super(key: key);
 
   //string manipulation
-  String getDay(final day){
+  String getDay(final day) {
     DateTime time = DateTime.fromMillisecondsSinceEpoch(day * 1000);
     String str = DateFormat('EEE').format(time);
     return str;
@@ -46,14 +46,16 @@ class DailyWeatherForecast extends StatelessWidget {
     );
   }
 
-  Widget dailyList(){
+  Widget dailyList() {
     print("this is min value contain = ${weatherDataDaily.daily![1].temp}");
     return SizedBox(
       height: 300,
       child: ListView.builder(
         scrollDirection: Axis.vertical,
-        itemCount: weatherDataDaily.daily.length > 7 ? 7 : weatherDataDaily.daily.length,
-        itemBuilder: (context , index){
+        itemCount: weatherDataDaily.daily.length > 7
+            ? 7
+            : weatherDataDaily.daily.length,
+        itemBuilder: (context, index) {
           return Column(
             children: [
               Container(
@@ -75,11 +77,11 @@ class DailyWeatherForecast extends StatelessWidget {
                     SizedBox(
                       height: 30,
                       width: 30,
-                      child: Image.asset("assets/weather/${weatherDataDaily.daily[index].weather![0].icon}.png"),
+                      child: Image.asset(
+                          "assets/weather/${weatherDataDaily.daily[index].weather![0].icon}.png"),
                     ),
                     Text(
-                      "${weatherDataDaily.daily[index].temp!.max}°/${weatherDataDaily.daily[index].temp!.min}°"
-                    ),
+                        "${weatherDataDaily.daily[index].temp!.max}°/${weatherDataDaily.daily[index].temp!.min}°"),
                   ],
                 ),
               ),
@@ -90,7 +92,6 @@ class DailyWeatherForecast extends StatelessWidget {
             ],
           );
         },
-
       ),
     );
   }

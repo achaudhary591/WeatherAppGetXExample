@@ -5,17 +5,18 @@ import 'package:sleek_circular_slider/sleek_circular_slider.dart';
 import '../utils/custom_colors.dart';
 
 class ComfortLevel extends StatelessWidget {
-
   final WeatherDataCurrent weatherDataCurrent;
 
-  const ComfortLevel({Key? key, required this.weatherDataCurrent}) : super(key: key);
+  const ComfortLevel({Key? key, required this.weatherDataCurrent})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Container(
-          margin: const EdgeInsets.only(top: 1, left: 20, right: 20, bottom: 20),
+          margin:
+              const EdgeInsets.only(top: 1, left: 20, right: 20, bottom: 20),
           child: const Text(
             "Comfort Level",
             style: TextStyle(
@@ -34,20 +35,15 @@ class ComfortLevel extends StatelessWidget {
                   initialValue: weatherDataCurrent.current.humidity!.toDouble(),
                   appearance: CircularSliderAppearance(
                     customWidths: CustomSliderWidths(
-                      handlerSize: 0,
-                      trackWidth: 8,
-                      progressBarWidth: 12
-                    ),
+                        handlerSize: 0, trackWidth: 8, progressBarWidth: 12),
                     infoProperties: InfoProperties(
-                      bottomLabelText: "Humidity",
-                      bottomLabelStyle: const TextStyle(
-                        letterSpacing: 0.1,
-                        fontSize: 14,
-                        height: 1.5
-                      )
-                    ),
-                    animDurationMultiplier: 2.5,
-                    animationEnabled: true,
+                        bottomLabelText: "Humidity",
+                        bottomLabelStyle: const TextStyle(
+                            letterSpacing: 0.1, fontSize: 14, height: 1.5)),
+                    animDurationMultiplier: 4,
+                    startAngle: 150,
+                    angleRange: 240,
+                    //animationEnabled: true,
                     size: 140,
                   ),
                 ),
@@ -67,7 +63,6 @@ class ComfortLevel extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                           ),
                         ),
-
                         TextSpan(
                           text: "${weatherDataCurrent.current.feelsLike}",
                           style: const TextStyle(
@@ -86,7 +81,6 @@ class ComfortLevel extends StatelessWidget {
                     width: 1,
                     color: CustomColors.dividerLine,
                   ),
-
                   RichText(
                     text: TextSpan(
                       children: [
@@ -99,7 +93,6 @@ class ComfortLevel extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                           ),
                         ),
-
                         TextSpan(
                           text: "${weatherDataCurrent.current.uvi}",
                           style: const TextStyle(
@@ -112,7 +105,7 @@ class ComfortLevel extends StatelessWidget {
                       ],
                     ),
                   ),
-                ],                
+                ],
               )
             ],
           ),
